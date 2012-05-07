@@ -1,4 +1,6 @@
-
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/tmp
 *.rbc
 *.sassc
 .sass-cache
