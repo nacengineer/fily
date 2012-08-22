@@ -1222,7 +1222,7 @@ $(function () {
         $('#fileupload')
             .fileupload({
                 autoUpload: true,
-                acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
+                acceptFileTypes: /(\.|\/)(pdf|docx)$/i,
                 previewFileTypes: /none/,
                 send: function (e, data) {
                     strictEqual(

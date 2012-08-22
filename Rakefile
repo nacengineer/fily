@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Fily::Application.load_tasks
+MultiDoc::Application.load_tasks

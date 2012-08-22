@@ -1,0 +1,58 @@
+= form_for @object_new, :html => { :multipart => true, :id => "fileupload"  } do |f|
+  <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+  %div.row.fileupload-buttonbar
+    %div.span7
+      <!-- The fileinput-button span is used to style the file input field as button -->
+      %span.btn.btn-success.fileinput-button
+        %i.icon-plus.icon-white
+        %span= t('fileupload.add_files')
+        = f.file_field :path
+      %button.btn.btn-primary.start{:type=>"submit"}
+        %i.icon-upload.icon-white
+        %span= t('fileupload.start_upload')
+      %button.btn.btn-warning.cancel{:type=>"reset"}
+        %i.icon-ban-circle.icon-white
+        %span= t('fileupload.cancel_upload')
+      %button.btn.btn-danger.delete{:type=>"button"}
+        %i.icon-trash.icon-white
+        %span= t('fileupload.delete_multi')
+      %input.toggle{:type=>"checkbox"}
+    %div.span5
+      <!-- The global progress bar -->
+      %div.progress.progress-success.progress-striped.active.fade
+        %div.bar{:style=>"width:0%;"}
+  <!-- The loading indicator is shown during image processing -->
+
+  %div.fileupload-loading
+  %br
+  %div.fluid-row
+    %div.span12
+      %div.row-fluid
+        %div.dropzone.primary.well.span3  Drop Primary Files Here
+        %div.span9
+          %table#primary.table.table-striped
+            %tbody.additional-files{ 'data-toggle'=>"modal-gallery", 'data-target'=>"#modal-gallery"}
+      %div.row-fluid
+        %div.dropzone.secondary.well.span3 Drop Supporting Files Here
+        %div.span9
+          %table#supporting.table.table-striped
+            %tbody.supplemental-files{ 'data-toggle'=>"modal-gallery", 'data-target'=>"#modal-gallery"}
+      %div.row-fluid
+        %div.dropzone.additional.well.span3 Drop Additional Files here
+        %div.span9
+          %table#additional.table.table-striped
+            %tbody.files{ 'data-toggle'=>"modal-gallery", 'data-target'=>"#modal-gallery"}
+
+:javascript
+  var fileUploadErrors = {
+  maxFileSize: 'File is too big',
+  minFileSize: 'File is too small',
+  acceptFileTypes: 'Filetype not allowed',
+  maxNumberOfFiles: 'Max number of files exceeded',
+  uploadedBytes: 'Uploaded bytes exceed file size',
+  emptyResult: 'Empty file upload result'
+  };
+
+= render "shared/fileupload/queue"
+= render "shared/fileupload/index"
+= render "shared/fileupload/js_include_local"

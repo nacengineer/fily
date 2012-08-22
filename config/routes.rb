@@ -1,6 +1,6 @@
-Fily::Application.routes.draw do
+MultiDoc::Application.routes.draw do
 
-  resources :pictures
+  resources :pictures, :only => [:index, :create, :destroy]
   root :to => 'pictures#new'
 
   # The priority is based upon order of creation:

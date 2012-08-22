@@ -1,4 +1,4 @@
-Fily::Application.configure do
+MultiDoc::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on
@@ -26,5 +26,28 @@ Fily::Application.configure do
   config.assets.compress = false
 
   # Expands the lines which load the assets
-  config.assets.debug = true
+  config.assets.debug = false
+
+  config.middleware.use( Oink::Middleware, :instruments => :memory, :logger => Rails.logger )
+
+  # MEMCACHED - Configured in each environment
+  # start memcached as daemon "memcached -d -m 128 -l 127.0.0.1 -p 11211"
+  memcached_config = YAML.load_file("#{Rails.root.to_s}/config/custom_ymls/memcached.yml")
+  config.cache_store = :dalli_store, memcached_config[Rails.env], {
+    :expires_after => 600,
+    :expires_in => 600,
+    :namespace => MultiDoc,
+    :compress => true,
+    :compress_threshold => 64*1024
+  }
+  # Save the memcached host/port
+  config.after_initialize do
+    MEMCACHED.host = memcached_config[Rails.env][0].split(':')[0]
+    MEMCACHED.port = memcached_config[Rails.env][0].split(':')[1]
+  end
+end
+
+Devise.setup do |config|
+  config.omniauth :developer
+  config.omniauth :ecourts, 'http://ecourts-tr.wicourts.gov', :target => 'ccefiling-multidoc'
 end

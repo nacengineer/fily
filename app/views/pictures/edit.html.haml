@@ -1,0 +1,3 @@
+= f.label "Gender"
+- f.collection_radio_buttons(:gender, [['Male', 'icon_male'], ['Female', 'icon_female']], :first, :last, :item_wrapper_class => 'horizontal',) do |gender|
+    = gender.label { image_tag("/assets/icons/16x16/#{gender.text}.png") + gender.radio_button  }

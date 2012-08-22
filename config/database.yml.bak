@@ -1,0 +1,41 @@
+postgres_defaults:       &postgres_defaults
+  adapter:  postgresql
+  encoding: UTF-8
+  pool:     5
+
+development_db_defaults: &development_db_defaults
+  <<: *postgres_defaults
+  username: postgres
+  password: password
+  host:     localhost
+  port:     5432
+
+cir_defaults:            &cir_defaults
+  <<: *postgres_defaults
+  username: viewer
+  password: viewer
+
+cir_dev_default:         &cir_dev_default
+  host:     cirdev
+  database: cir
+  port:     5632
+
+cir_dev_repositories:    &cir_dev_repositories
+  cirdev:
+    <<: *cir_defaults
+    <<: *cir_dev_default
+
+# here's the meat of this file
+development:
+  <<: *development_db_defaults
+  database: multidoc
+  repositories:
+    <<: *cir_dev_repositories
+
+# test:
+#   adapter:  sqlite3
+#   database: db/test.sqlite3
+#   pool:     5
+#   timeout:  5000
+#   repositories:
+#     <<: *cir_dev_repositories

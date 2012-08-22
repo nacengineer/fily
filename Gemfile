@@ -1,38 +1,96 @@
+source "http://gems.wicourts.gov"
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.3'
+RAILS_VERSION = '~> 3.2.0'
+DM_VERSION    = '~> 1.2.0'
 
-# Bundle edge Rails instead:
-# gem 'rails',     :git => 'git://github.com/rails/rails.git'
+gem 'actionmailer',         RAILS_VERSION
+gem 'activeresource',       RAILS_VERSION
+gem 'rake'
+gem 'pg'
 
-gem 'sqlite3'
-gem 'mini_magick'
-gem 'carrierwave'
+# datamapper for connecting to postgres
+# sqlite for quick one off database needs. eg testing
+gem 'dm-core',              DM_VERSION
+gem 'dm-rails',             DM_VERSION
+gem 'dm-aggregates',        DM_VERSION
+gem 'dm-observer',          DM_VERSION
+gem 'dm-postgres-adapter',  DM_VERSION
+gem 'dm-migrations',        DM_VERSION
+gem 'dm-do-adapter',        DM_VERSION
+gem 'dm-sqlite-adapter',    DM_VERSION
+gem 'dm-validations',       DM_VERSION
+gem 'dm-timestamps',        DM_VERSION
+gem 'dm-ar-finders',        DM_VERSION
+gem 'dm-constraints',       DM_VERSION
+gem 'dm-serializer',        '~> 1.2.1'
+gem 'dm-devise',            '~> 2.1.0'
 
-gem 'json'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  #gem 'sass-rails',   '~> 3.1.5'
-  gem 'coffee-rails', '~> 3.1.1'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'sass-rails',         '~> 3.2.3'
+  gem 'bootstrap-sass',     '~> 2.0.2'
+  gem 'coffee-rails'
+  gem 'uglifier',           '~>1.0.3'
+  gem 'compass-rails'
+  gem 'jquery-ui-themes',   '~> 0.0.5'
 end
 
+gem 'carrierwave-datamapper', :require => 'carrierwave/datamapper'
+gem 'country_select', '1.0', :git => 'git@github.com:ccap/country_select.git'
+gem 'mini_magick'
+gem 'fog',                  '~> 1.3.1'
+gem 'simple_form'
 gem 'haml-rails'
 gem 'jquery-rails'
-gem 'twitter-bootstrap-rails'
-gem 'pry-rails'
+gem 'json'
+gem 'dalli'
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+group :ccap do
+  # For Deploys
+  gem 'brahma',             '~> 2.3.2'
+  gem 'omniauth',           '~> 1.0.2'
+  gem 'omniauth-ecourts',   '~> 1.0.2'
+  gem 'for11'
+end
 
-# Use unicorn as the web server
-# gem 'unicorn'
+group :development do
+  gem 'pry-rails'
+  gem 'annotate'
+  gem 'silent-postgres'
+  gem 'awesome_print'
+  gem 'rails3-generators'
+  gem 'oink'
+  gem 'hirb'
+  gem 'ruby-prof'
+  gem 'thin'
+end
 
-# Deploy with Capistrano
-# gem 'capistrano'
+group :test do
+  # Pretty printed test output
+  gem 'turn',               '~>0.8.3', :require => false
+  # gem 'ruby-debug19' , :require => 'ruby-debug'
+  gem 'simplecov'
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'ZenTest'
+  gem 'autotest-rails'
+  gem 'metrical'
+  gem 'pry'
+  gem 'forgery'
+  gem 'sqlite3'
+end
 
-# To use debugger
-# gem 'ruby-debug'
+group :linux_test do
+  gem 'test_notifier'
+  gem 'rb-inotify'
+  gem 'libnotify'
+end
+
+group :production do
+  # Use unicorn as the web server
+  gem 'trinidad'
+end
 
