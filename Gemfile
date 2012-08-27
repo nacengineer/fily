@@ -23,6 +23,7 @@ gem 'dm-validations',       DM_VERSION
 gem 'dm-timestamps',        DM_VERSION
 gem 'dm-ar-finders',        DM_VERSION
 gem 'dm-constraints',       DM_VERSION
+gem 'dm-types',             DM_VERSION
 gem 'dm-serializer',        '~> 1.2.1'
 gem 'dm-devise',            '~> 2.1.0'
 
@@ -31,7 +32,7 @@ gem 'dm-devise',            '~> 2.1.0'
 # in production environments by default.
 group :assets do
   gem 'sass-rails',         '~> 3.2.3'
-  gem 'bootstrap-sass',     '~> 2.0.2'
+  gem 'bootstrap-sass',     '~> 2'
   gem 'coffee-rails'
   gem 'uglifier',           '~>1.0.3'
   gem 'compass-rails'

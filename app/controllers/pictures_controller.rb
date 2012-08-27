@@ -11,13 +11,14 @@ class PicturesController < ApplicationController
 
   def create
     @picture = Picture.new
-    @picture.avatar = params[:picture][:path]
+    @picture.source = params[:picture][:path]
     if @picture.save
       respond_to do |format|
-        format.html {                                         #(html response is for browsers using iframe sollution)
+        #(html response is for browsers using iframe solution)
+        format.html {
           render :json => [@picture.to_jq_upload].to_json,
-          :content_type => 'text/html',
-          :layout => false
+                 :content_type => 'text/html',
+                 :layout => false
         }
         format.json {
           render :json => [@picture.to_jq_upload].to_json
