@@ -49,5 +49,5 @@ end
 
 Devise.setup do |config|
   config.omniauth :developer
-  config.omniauth :ecourts, 'http://ecourts-tr.wicourts.gov', :target => 'ccefiling-multidoc'
+  config.omniauth :ecourts, 'http://ecourts-tr.wicourts.gov', :target => 'multidoc-dsoutha'
 end

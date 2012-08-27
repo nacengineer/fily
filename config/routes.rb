@@ -1,6 +1,15 @@
 MultiDoc::Application.routes.draw do
 
   resources :documents, :only => [:index, :create, :destroy]
+  # Users
+  devise_scope :user do
+    get 'sign_in' => redirect('/users/auth/ecourts'), :as => :new_user_session
+    if Rails.env.development?
+      get 'developer_sign_in' => redirect('/users/auth/developer'), :as => :new_developer_session
+    end
+    get 'sign_out', :to => 'users/sessions#destroy', :as => :destroy_user_session
+  end
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   root :to => 'documents#new'
 
   # The priority is based upon order of creation:

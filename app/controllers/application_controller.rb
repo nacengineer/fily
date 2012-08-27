@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  # before_filter :authenticate_user!
+  before_filter :authenticate_user!
 
   # find the best cir based upon Environment
   # include Ccap::Cir

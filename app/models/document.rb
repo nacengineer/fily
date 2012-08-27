@@ -22,15 +22,26 @@ class Document
 
   mount_uploader :source, DocumentUploader
 
+  belongs_to :user
+
   #one convenient method to pass jq_upload the necessary information
   def to_jq_upload
     {
-      "name"        => source.to_s,
+      "name"        => file_name,
       "size"        => source.size,
       "url"         => source.url,
       "delete_url"  => document_path(:id => id),
       "delete_type" => "DELETE"
     }
   end
+
+  def file_name
+    source.to_s.split("/").last
+  end
+
+  # before :valid do
+  #   u = User.first || User.create(:user_e_account_no => Time.now.to_i)
+  #   user_e_account_no( u.user_e_account_no )
+  # end
 
 end

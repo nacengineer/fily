@@ -12,6 +12,7 @@ class DocumentsController < ApplicationController
   def create
     @document = Document.new
     @document.source = params[:document][:path]
+    binding.pry
     if @document.save
       respond_to do |format|
         #(html response is for browsers using iframe solution)
