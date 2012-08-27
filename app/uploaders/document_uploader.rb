@@ -1,6 +1,6 @@
 require 'carrierwave/datamapper'
 
-class AvatarUploader < CarrierWave::Uploader::Base
+class DocumentUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   # storage :file

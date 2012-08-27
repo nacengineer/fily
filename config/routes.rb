@@ -1,7 +1,7 @@
 MultiDoc::Application.routes.draw do
 
-  resources :pictures, :only => [:index, :create, :destroy]
-  root :to => 'pictures#new'
+  resources :documents, :only => [:index, :create, :destroy]
+  root :to => 'documents#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

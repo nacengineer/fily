@@ -3,7 +3,7 @@ require 'carrierwave/datamapper'
 
 require 'carrierwave/datamapper'
 
-class Picture
+class Document
   include Rails.application.routes.url_helpers
   include DataMapper::Resource
 
@@ -20,16 +20,15 @@ class Picture
   # property  :created_at,  DateTime
   # property  :updated_at,  DateTime
 
-  # belongs_to :user
-  mount_uploader :source, AvatarUploader
+  mount_uploader :source, DocumentUploader
 
   #one convenient method to pass jq_upload the necessary information
   def to_jq_upload
     {
-      "name"        => id,
+      "name"        => source.to_s,
       "size"        => source.size,
       "url"         => source.url,
-      "delete_url"  => picture_path(:id => id),
+      "delete_url"  => document_path(:id => id),
       "delete_type" => "DELETE"
     }
   end

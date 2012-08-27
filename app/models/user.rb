@@ -45,7 +45,6 @@ class User
   property :roles_mask, Integer, :default => 0
 
   has n, :akas
-  # has n, :pictures
 
   # Map eAccount nodes to this user model
   EACCOUNT_MAP = {:eAccountNo => :e_account_no,
