@@ -89,6 +89,10 @@ group :linux_test do
   gem 'libnotify'
 end
 
+group :tr do
+  gem 'oink'
+end
+
 group :production do
   # Use unicorn as the web server
   gem 'trinidad'
