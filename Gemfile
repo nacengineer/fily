@@ -54,11 +54,11 @@ group :ccap do
   gem 'brahma',             '~> 2.3.2'
   gem 'omniauth',           '~> 1.0.2'
   gem 'omniauth-ecourts',   '~> 1.0.2'
-  gem 'for11'
+  gem 'for11',              '~> 0.2'
 end
 
 group :development do
-  gem 'pry-rails'
+  # gem 'pry-rails'
   gem 'annotate'
   gem 'silent-postgres'
   gem 'awesome_print'
@@ -67,6 +67,7 @@ group :development do
   gem 'hirb'
   gem 'ruby-prof'
   gem 'thin'
+  gem 'brahma', :require => false
 end
 
 group :test do

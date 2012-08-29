@@ -1,0 +1,21 @@
+application_name:      multidoc
+version_control:       git
+repo_loc:              git@gitlab.wicourts.gov:multidoc.git
+dns_root_url:          wicourts.gov
+default_branch:        master
+user:                  webteam
+default_rvm:           ruby-1.9.3-p194@multidoc
+use_sudo:              false
+git_enable_submodules: 1
+keep_releases:         5
+ssh_paranoid:          false
+
+# for rails 3.1 and up
+normalize_asset_timestamps: false
+
+env_info:
+  tr:
+    deployable:  false
+    server:      staging1
+    server_type: unicorn
+    use_socket:  true

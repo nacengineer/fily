@@ -51,6 +51,13 @@ development:
   repositories:
     <<: *cir_dev_repositories
 
+# here's the meat of this file
+tr:
+  <<: *development_db_defaults
+  database: multidoc-tr
+  repositories:
+    <<: *cir_dev_repositories
+
 test:
   adapter:  sqlite3
   database: db/test.sqlite3

@@ -1,0 +1,28 @@
+<%# This is the debug view for the for11 gem %>
+<% defined?(For11) ? (for11 = For11.new) : nil -%>
+<% if for11 && for11.kind_of?(For11) -%>
+  <div id="for11">
+    <%= content_tag :h3, "This is debug info. It is not present in Production." -%>
+    <%= content_tag :h4, "General Info" -%>
+    <%= content_tag :p,   for11.ruby -%>
+    <%= content_tag :p,   "Environment: #{for11.env}" -%>
+    <%= content_tag :p,   for11.rvm -%>
+    <%= content_tag :h4,   "Database Info:" -%>
+    <%= content_tag :pre, debug(for11.db) -%>
+
+    <% if defined? params && defined? debug -%>
+      <%= content_tag :h4, "Params Info" -%>
+      <%= content_tag :pre, debug(params) -%>
+    <% end %>
+
+    <% if defined? session && defined? debug -%>
+      <%= content_tag :h4, "Session Info" -%>
+      <%= content_tag :pre, debug(session) -%>
+    <% end -%>
+
+    <% if @content_for_for11_extra -%>
+      <%= content_tag :h4, "User Specified Debug Information:" -%>
+      <%= yield :for11_extra -%>
+    <% end -%>
+  </div>
+<% end -%>
