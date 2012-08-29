@@ -397,7 +397,7 @@ DEPENDENCIES
   autotest-rails
   awesome_print
   bootstrap-sass (~> 2)
-  brahma (~> 2.3.2)
+  brahma
   capybara
   carrierwave-datamapper
   coffee-rails

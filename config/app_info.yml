@@ -15,7 +15,12 @@ normalize_asset_timestamps: false
 
 env_info:
   tr:
-    deployable:  false
+    deployable:  true
     server:      staging1
     server_type: unicorn
     use_socket:  true
+    skip_init:   true
+    bundle_without:
+      - :development
+      - :test
+      - :linux_test

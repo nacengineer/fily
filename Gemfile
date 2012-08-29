@@ -50,8 +50,6 @@ gem 'json'
 gem 'dalli'
 
 group :ccap do
-  # For Deploys
-  gem 'brahma',             '~> 2.3.2'
   gem 'omniauth',           '~> 1.0.2'
   gem 'omniauth-ecourts',   '~> 1.0.2'
   gem 'for11',              '~> 0.2'
