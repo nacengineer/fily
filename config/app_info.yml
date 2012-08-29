@@ -19,6 +19,7 @@ env_info:
     server:      staging1
     server_type: unicorn
     use_socket:  true
+    use_bundler: true
     skip_init:   true
     bundle_without:
       - :development

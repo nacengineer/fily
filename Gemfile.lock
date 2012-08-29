@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:ccap/country_select.git
+  remote: git@gitlab.wicourts.gov:country_select.git
   revision: b2ed68e756e040000c0041814de043fa5e74bd39
   specs:
     country_select (1.0)

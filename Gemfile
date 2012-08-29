@@ -40,7 +40,7 @@ group :assets do
 end
 
 gem 'carrierwave-datamapper', :require => 'carrierwave/datamapper'
-gem 'country_select', '1.0', :git => 'git@github.com:ccap/country_select.git'
+gem 'country_select', '1.0', :git => 'git@gitlab.wicourts.gov:country_select.git'
 gem 'mini_magick'
 gem 'fog',                  '~> 1.3.1'
 gem 'simple_form'
