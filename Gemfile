@@ -48,6 +48,7 @@ gem 'haml-rails'
 gem 'jquery-rails'
 gem 'json'
 gem 'dalli'
+gem 'honey_badger',         :git => 'git://github.com/rsanheim/honey_badger.git'
 
 group :ccap do
   gem 'omniauth',           '~> 1.0.2'
@@ -65,7 +66,7 @@ group :development do
   gem 'hirb'
   gem 'ruby-prof'
   gem 'thin'
-  gem 'brahma', :require => false
+  gem 'brahma', '~> 2.3.26', :require => false, :path => '../brahma/'
 end
 
 group :test do

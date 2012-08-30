@@ -15,12 +15,13 @@ normalize_asset_timestamps: false
 
 env_info:
   tr:
-    deployable:  true
-    server:      staging1
-    server_type: unicorn
-    use_socket:  true
-    use_bundler: true
-    skip_init:   true
+    deployable:       true
+    server:           staging1
+    server_type:      unicorn
+    app_name:         ccefiling_tr_multidoc
+    use_socket:       true
+    use_bundler:      true
+    skip_init:        true
     bundle_without:
       - :development
       - :test

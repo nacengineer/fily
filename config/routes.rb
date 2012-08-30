@@ -1,6 +1,7 @@
 MultiDoc::Application.routes.draw do
 
   resources :documents, :only => [:index, :create, :destroy]
+  get 'multidoc', :to => "public#status"
   # Users
   devise_scope :user do
     get 'sign_in' => redirect('/users/auth/ecourts'), :as => :new_user_session

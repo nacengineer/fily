@@ -1,8 +1,22 @@
 GIT
+  remote: git://github.com/rsanheim/honey_badger.git
+  revision: 99270b20399754454f8c966ab603517d7343996d
+  specs:
+    honey_badger (0.0.4)
+
+GIT
   remote: git@gitlab.wicourts.gov:country_select.git
   revision: b2ed68e756e040000c0041814de043fa5e74bd39
   specs:
     country_select (1.0)
+
+PATH
+  remote: ../brahma/
+  specs:
+    brahma (2.3.26)
+      capistrano (>= 2.5.19)
+      capistrano_colors (>= 0.5.5)
+      rvm-capistrano (>= 1.2.2)
 
 GEM
   remote: http://gems.wicourts.gov/
@@ -48,10 +62,6 @@ GEM
     bcrypt-ruby (3.0.1)
     blockenspiel (0.4.5)
     bootstrap-sass (2.0.4.1)
-    brahma (2.3.25)
-      capistrano (>= 2.5.19)
-      capistrano_colors (>= 0.5.5)
-      rvm-capistrano (>= 1.2.2)
     builder (3.0.0)
     capistrano (2.13.3)
       highline
@@ -349,7 +359,7 @@ GEM
       multi_json (~> 1.0)
       simplecov-html (~> 0.5.3)
     simplecov-html (0.5.3)
-    slop (3.3.2)
+    slop (3.3.3)
     sprockets (2.1.3)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -398,7 +408,7 @@ DEPENDENCIES
   autotest-rails
   awesome_print
   bootstrap-sass (~> 2)
-  brahma
+  brahma (~> 2.3.26)!
   capybara
   carrierwave-datamapper
   coffee-rails
@@ -426,6 +436,7 @@ DEPENDENCIES
   forgery
   haml-rails
   hirb
+  honey_badger!
   jquery-rails
   jquery-ui-themes (~> 0.0.5)
   json
