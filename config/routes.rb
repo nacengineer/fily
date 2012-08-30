@@ -1,6 +1,6 @@
 MultiDoc::Application.routes.draw do
 
-  scope '/multidoc' do
+  scope '/multidoc/' do
     resources :documents, :only => [:index, :create, :destroy]
     # Users
     devise_scope :user do
@@ -12,4 +12,6 @@ MultiDoc::Application.routes.draw do
     end
   end
   devise_for :users, :path => "/multidoc/users", :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  get '/multidoc/' => "public#index"
+  root :to => "public#index"
 end
