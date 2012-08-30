@@ -13,10 +13,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def developer
-    stub_hash = request.env["omniauth.auth"]
+    stub_hash                  = request.env["omniauth.auth"]
     stub_hash.extra[:fullName] = stub_hash.uid
-    stub_hash.extra[:mail] = stub_hash.info.email
-    stub_hash.uid = 100
+    stub_hash.extra[:mail]     = stub_hash.info.email
+    stub_hash.uid              = 100
 
     @user = User.find_or_create_from_auth_hash(stub_hash, current_user)
 
