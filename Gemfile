@@ -91,10 +91,11 @@ end
 
 group :tr do
   gem 'oink'
+  gem 'unicorn'
 end
 
 group :production do
   # Use unicorn as the web server
-  gem 'trinidad'
+  gem 'unicorn'
 end
 
