@@ -66,7 +66,7 @@ group :development do
   gem 'hirb'
   gem 'ruby-prof'
   gem 'thin'
-  gem 'brahma', '~> 2.3.26', :require => false, :path => '../brahma/'
+  gem 'brahma', :require => false
 end
 
 group :test do

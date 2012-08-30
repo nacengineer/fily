@@ -10,14 +10,6 @@ GIT
   specs:
     country_select (1.0)
 
-PATH
-  remote: ../brahma/
-  specs:
-    brahma (2.3.26)
-      capistrano (>= 2.5.19)
-      capistrano_colors (>= 0.5.5)
-      rvm-capistrano (>= 1.2.2)
-
 GEM
   remote: http://gems.wicourts.gov/
   remote: http://rubygems.org/
@@ -62,6 +54,10 @@ GEM
     bcrypt-ruby (3.0.1)
     blockenspiel (0.4.5)
     bootstrap-sass (2.0.4.1)
+    brahma (2.3.26)
+      capistrano (>= 2.5.19)
+      capistrano_colors (>= 0.5.5)
+      rvm-capistrano (>= 1.2.2)
     builder (3.0.0)
     capistrano (2.13.3)
       highline
@@ -408,7 +404,7 @@ DEPENDENCIES
   autotest-rails
   awesome_print
   bootstrap-sass (~> 2)
-  brahma (~> 2.3.26)!
+  brahma
   capybara
   carrierwave-datamapper
   coffee-rails
