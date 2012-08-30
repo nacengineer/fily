@@ -42,7 +42,7 @@ MultiDoc::Application.configure do
   config.cache_store = :dalli_store, memcached_config[Rails.env], {
     :expires_after      => 600,
     :expires_in         => 600,
-    :namespace          => MultiDocTr,
+    :namespace          => MultiDoc,
     :compress           => true,
     :compress_threshold => 64*1024
   }
