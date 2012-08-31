@@ -10,6 +10,7 @@ MultiDoc::Application.routes.draw do
       end
       get 'sign_out', :to => 'users/sessions#destroy', :as => :destroy_user_session
     end
+    match 'status' => "public#index"
   end
   devise_for :users, :path => "/multidoc/users", :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   match '/multidoc/' => "documents#new"

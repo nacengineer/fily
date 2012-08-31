@@ -1,7 +1,7 @@
 class PublicController < ApplicationController
 
   def index
-    render :text => "What? What?"
+    render "for11/_debug"
   end
 
 end
