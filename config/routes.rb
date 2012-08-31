@@ -6,12 +6,13 @@ MultiDoc::Application.routes.draw do
     devise_scope :user do
       get 'sign_in' => redirect('/multidoc/users/auth/ecourts'), :as => :new_user_session
       if Rails.env.development?
-        get 'developer_sign_in' => redirect('multidoc/users/auth/developer'), :as => :new_developer_session
+        get 'developer_sign_in' => redirect('/multidoc/users/auth/developer'), :as => :new_developer_session
       end
       get 'sign_out', :to => 'users/sessions#destroy', :as => :destroy_user_session
     end
   end
   devise_for :users, :path => "/multidoc/users", :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-  get '/multidoc/' => "public#index"
+  match '/multidoc/' => "public#index"
   root :to => "public#index"
+
 end
