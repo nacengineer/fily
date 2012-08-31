@@ -12,7 +12,7 @@ MultiDoc::Application.routes.draw do
     end
   end
   devise_for :users, :path => "/multidoc/users", :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-  match '/multidoc/' => "public#index"
-  root :to => "public#index"
+  match '/multidoc/' => "documents#new"
+  root :to => "documents#new"
 
 end
