@@ -26,7 +26,10 @@ MultiDoc::Application.configure do
   config.assets.compress = false
 
   # Expands the lines which load the assets
-  config.assets.debug = false
+  config.assets.debug    = false
+
+  # Enable the asset pipeline
+  config.assets.enabled  = false
 
   config.middleware.use( Oink::Middleware, :instruments => :memory, :logger => Rails.logger )
 
