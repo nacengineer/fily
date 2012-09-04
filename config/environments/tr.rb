@@ -10,17 +10,14 @@ MultiDoc::Application.configure do
   config.whiny_nils = true
 
   # Show full error reports and disable caching
-  config.consider_all_requests_local       = false
-  config.action_controller.perform_caching = true
+  config.consider_all_requests_local       = true
+  config.action_controller.perform_caching = false
 
   # Do not compress assets
   config.assets.compress = true
 
   # Expands the lines which load the assets
   config.assets.debug    = false
-
-  # Enable the asset pipeline
-  config.assets.enabled  = false
 
   # Specify the default JavaScript compressor
   config.assets.js_compressor  = :uglifier
