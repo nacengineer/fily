@@ -10,8 +10,20 @@ MultiDoc::Application.configure do
   config.whiny_nils = true
 
   # Show full error reports and disable caching
-  config.consider_all_requests_local       = true
-  config.action_controller.perform_caching = false
+  config.consider_all_requests_local       = false
+  config.action_controller.perform_caching = true
+
+  # Do not compress assets
+  config.assets.compress = true
+
+  # Expands the lines which load the assets
+  config.assets.debug    = false
+
+  # Enable the asset pipeline
+  config.assets.enabled  = false
+
+  # Specify the default JavaScript compressor
+  config.assets.js_compressor  = :uglifier
 
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = false
@@ -21,15 +33,6 @@ MultiDoc::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
-
-  # Do not compress assets
-  config.assets.compress = false
-
-  # Expands the lines which load the assets
-  config.assets.debug    = false
-
-  # Enable the asset pipeline
-  config.assets.enabled  = false
 
   config.middleware.use( Oink::Middleware, :instruments => :memory, :logger => Rails.logger )
 
