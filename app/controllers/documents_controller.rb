@@ -1,4 +1,7 @@
 class DocumentsController < ApplicationController
+  if Rails.env.development? || Rails.env.tr?
+    before_filter :set_user
+  end
 
   def index
     @documents = Document.all
@@ -10,9 +13,8 @@ class DocumentsController < ApplicationController
   end
 
   def create
-    @document = Document.new
+    @document = Document.new(:user => current_user)
     @document.source = params[:document][:path]
-    binding.pry
     if @document.save
       respond_to do |format|
         #(html response is for browsers using iframe solution)
@@ -34,5 +36,11 @@ class DocumentsController < ApplicationController
     @document = Document.find(params[:id])
     @document.destroy
     render :json => true
+  end
+
+  private
+
+  def set_user
+    @current_user = User.first
   end
 end

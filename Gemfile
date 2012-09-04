@@ -57,7 +57,7 @@ group :ccap do
 end
 
 group :development do
-  # gem 'pry-rails'
+  gem 'pry-rails'
   gem 'annotate'
   gem 'silent-postgres'
   gem 'awesome_print'

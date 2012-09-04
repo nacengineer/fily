@@ -14,6 +14,9 @@
     = stylesheet_link_tag '/javascripts/jquery-file-upload/css/style.css'
     = stylesheet_link_tag "http://blueimp.github.com/cdn/css/bootstrap-responsive.min.css"
     = stylesheet_link_tag "http://blueimp.github.com/Bootstrap-Image-Gallery/css/bootstrap-image-gallery.min.css"
+    = stylesheet_link_tag "application"
+    = stylesheet_link_tag 'http://blueimp.github.com/cdn/css/bootstrap.min.css'
+
     = stylesheet_link_tag "/javascripts/jquery-file-upload/css/jquery.fileupload-ui.css"
     = stylesheet_link_tag 'http://blueimp.github.com/cdn/css/bootstrap.min.css'
     = stylesheet_link_tag "application", :media => "all"
@@ -31,7 +34,6 @@
       = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
 
     = csrf_meta_tags
-
   %body
     = honey_badger unless Rails.env.production?
     .navbar.navbar-fixed-top
