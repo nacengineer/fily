@@ -52,15 +52,19 @@
   display: block;
 }
 
-/* Fix for IE 6: */
-*html .fileinput-button {
-  line-height: 22px;
-  margin: 1px -3px 0 0;
+$old-ie6: false !default;
+$old-ie7: false !default;
+
+@mixin ie6-fileinput-button {
+  @if $ie6 {
+    @content;
+  }
 }
 
-/* Fix for IE 7: */
-*+html .fileinput-button {
-  margin: 1px 0 0 0;
+@mixin ie7-fileinput-button {
+  @if $ie7 {
+    @content;
+  }
 }
 
 @media (max-width: 480px) {

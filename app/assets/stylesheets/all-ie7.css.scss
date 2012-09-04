@@ -1,0 +1,10 @@
+@include ie7-fileinput-button {
+  /* Fix for IE 7: */
+  *+html .fileinput-button {
+    margin: 1px 0 0 0;
+  }
+}
+
+$ie7: true;
+@import "fileupload/style";
+@import "fileupload/jquery.fileupload-ui";

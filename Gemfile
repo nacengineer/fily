@@ -37,6 +37,7 @@ group :assets do
   gem 'uglifier',           '~>1.0.3'
   gem 'compass-rails'
   gem 'jquery-ui-themes',   '~> 0.0.5'
+  gem 'jquery-ui-rails'
 end
 
 gem 'carrierwave-datamapper', :require => 'carrierwave/datamapper'

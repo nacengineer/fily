@@ -7,5 +7,9 @@
 //= require jquery
 //= require jquery-ui
 //= require jquery_ujs
+//= require jquery.ui.widget
 //= require_tree .
+//= require jquery-file-upload/jquery.iframe-transport.js
+//= require jquery-file-upload/jquery.fileupload.js
+//= require jquery-file-upload/jquery.fileupload-ui.js
 //= require bootstrap

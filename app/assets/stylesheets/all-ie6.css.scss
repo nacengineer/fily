@@ -1,0 +1,11 @@
+@include ie6-fileinput-button {
+  /* Fix for IE 6: */
+  *html .fileinput-button {
+    line-height: 22px;
+    margin: 1px -3px 0 0;
+  }
+}
+
+$ie6: true;
+@import "fileupload/style";
+@import "fileupload/jquery.fileupload-ui";
