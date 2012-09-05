@@ -8,3 +8,11 @@
 $ie7: true;
 @import "fileupload/style";
 @import "fileupload/jquery.fileupload-ui";
+
+.lt-ie9 .corner-banner.honey-badger {
+ /* IE6 and 7 */
+ filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678,sizingMethod='auto expand');
+
+ margin-left: 20px;
+ margin-top: -70px;
+}
