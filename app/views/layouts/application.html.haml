@@ -16,12 +16,12 @@
     /[if lt IE 7]
       = stylesheet_link_tag "http://blueimp.github.com/cdn/css/bootstrap-ie6.min.css"
 
-
     = javascript_include_tag 'http://blueimp.github.com/JavaScript-Templates/tmpl.min.js'
     = javascript_include_tag 'http://blueimp.github.com/JavaScript-Load-Image/load-image.min.js'
     = javascript_include_tag "application"
     /[if lt IE 9]
       = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
+
     = csrf_meta_tags
   %body
     = honey_badger [Rails.env, "BETA"] unless Rails.env.production?
