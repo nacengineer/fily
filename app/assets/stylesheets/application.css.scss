@@ -8,3 +8,7 @@
 @import "honey_badger";
 @import "jquery-file-upload/style";
 @import "jquery-file-upload/jquery.fileupload-ui";
+
+.honey-badger.tr {
+   @include corner-banner(#709410);
+}
