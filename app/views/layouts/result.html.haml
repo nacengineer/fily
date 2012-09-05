@@ -1,0 +1,7 @@
+!!! 5
+%html(lang="en")
+  %head
+    %title jQuery Iframe Transport Plugin Redirect Page
+  %body
+    :javascript
+      document.body.innerHTML=decodeURIComponent(window.location.search.slice(1));

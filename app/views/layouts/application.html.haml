@@ -6,11 +6,7 @@
     %title= content_for?(:title) ? yield(:title) : "Wisconsin Circuit Courts eFiling"
 
     = favicon_link_tag '/favicon.ico'
-    %link(href="/ccap-images/apple-touch-icon.png" rel="apple-touch-icon")
-    %link(href="/ccap-images/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72")
-    %link(href="/ccap-images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114")
-
-    / Le HTML5 shim, for IE6-8 support of HTML elements
+    = ios_links( :asset_pipeline => true )
     = stylesheet_link_tag "application", :media => "all"
 
     /[if lt IE 8]
@@ -28,15 +24,7 @@
       = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
     = csrf_meta_tags
   %body
-    = honey_badger unless Rails.env.production?
-    .navbar.navbar-fixed-top
-      .navbar-inner
-        .container
-          %a.btn.btn-navbar(data-target=".nav-collapse" data-toggle="collapse")
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.brand(href="#") ccefiling File Uploader
+    = honey_badger [Rails.env, "BETA"] unless Rails.env.production?
 
     .container
 
@@ -46,10 +34,4 @@
             = yield
 
       %footer
-        %p &copy; Company 2012
-    /
-      Javascripts
-      \==================================================
-    / Placed at the end of the document so the pages load faster
-    =# javascript_include_tag "application"
-
+        %p CCAP eFiling Multi-File Upload Beta

@@ -14,19 +14,19 @@
                 'redirect',
                 window.location.href.replace(
                         /\/[^\/]*$/,
-                        '/cors/result.html?%s'
+                        '/multidoc/documents/result.html?%s'
                 )
         );
 
         $('#fileupload').fileupload('option', {
-            maxFileSize:10000000,
+            maxFileSize: 10240000,
             acceptFileTypes:/(\.|\/)(pdf|docx)$/i,
             sequentialUploads:true,
             process:[
                 {
                     action:'load',
                     fileTypes:/^image\/(gif|jpeg|png)$/,
-                    maxFileSize:20000000 // 20MB
+                    maxFileSize:20480000 // 20MB
                 },
                 {
                     action:'resize',

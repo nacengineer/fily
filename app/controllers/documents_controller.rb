@@ -38,6 +38,10 @@ class DocumentsController < ApplicationController
     render :json => true
   end
 
+  def result
+    render :layout => 'results'
+  end
+
   private
 
   def set_user
