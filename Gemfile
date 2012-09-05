@@ -32,7 +32,7 @@ gem 'dm-devise',            '~> 2.1.0'
 # in production environments by default.
 group :assets do
   gem 'sass-rails',         '~> 3.2.3'
-  gem 'bootstrap-sass',     '~> 2'
+  gem 'bootstrap-sass',     '~> 2.0.4.0'
   gem 'coffee-rails'
   gem 'uglifier',           '~>1.0.3'
   gem 'compass-rails'
@@ -72,7 +72,7 @@ end
 
 group :test do
   # Pretty printed test output
-  gem 'turn',               '~>0.8.3', :require => false
+  gem 'turn',               '~> 0.8.3', :require => false
   # gem 'ruby-debug19' , :require => 'ruby-debug'
   gem 'simplecov'
   gem 'factory_girl_rails'

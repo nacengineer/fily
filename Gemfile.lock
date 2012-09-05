@@ -408,7 +408,7 @@ DEPENDENCIES
   annotate
   autotest-rails
   awesome_print
-  bootstrap-sass (~> 2)
+  bootstrap-sass (~> 2.0.4.0)
   brahma
   capybara
   carrierwave-datamapper

@@ -3,10 +3,13 @@
 */
 
 @import "bootstrap";
+@import "bootstrap-responsive";
+@import "jquery-file-upload/bootstrap-image-gallery.min.css";
 @import "layout";
 @import "scaffolds";
 @import "honey_badger";
 @import "jquery-file-upload/style";
+// This file hides the attach box
 @import "jquery-file-upload/jquery.fileupload-ui";
 
 .honey-badger.tr {

@@ -56,10 +56,13 @@ module MultiDoc
 
     # Enable the asset pipeline
     config.assets.enabled = true
+    # images
     config.assets.paths << "#{Rails.root}/app/assets/images/jquery-file-upload"
+    # stylesheets
+    config.assets.paths << "#{Rails.root}/app/assets/stylesheets/jquery-file-upload"
+    # javascript
     config.assets.paths << "#{Rails.root}/app/assets/javascripts/jquery-file-upload"
     config.assets.paths << "#{Rails.root}/app/assets/javascripts/jquery-file-upload/cors"
-    config.assets.paths << "#{Rails.root}/app/assets/stylesheets/jquery-file-upload"
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'

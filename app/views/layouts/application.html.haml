@@ -3,17 +3,16 @@
   %head
     %meta(charset="utf-8")
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    %title= content_for?(:title) ? yield(:title) : "MultiDoc"
-    = favicon_link_tag 'favicon.ico'
-    %link(href="images/apple-touch-icon.png" rel="apple-touch-icon")
-    %link(href="images/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72")
-    %link(href="images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114")
+    %title= content_for?(:title) ? yield(:title) : "Wisconsin Circuit Courts eFiling"
+
+    = favicon_link_tag '/favicon.ico'
+    %link(href="/ccap-images/apple-touch-icon.png" rel="apple-touch-icon")
+    %link(href="/ccap-images/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72")
+    %link(href="/ccap-images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114")
 
     / Le HTML5 shim, for IE6-8 support of HTML elements
     = stylesheet_link_tag "application", :media => "all"
-    = stylesheet_link_tag "http://blueimp.github.com/cdn/css/bootstrap-responsive.min.css"
-    = stylesheet_link_tag "http://blueimp.github.com/Bootstrap-Image-Gallery/css/bootstrap-image-gallery.min.css"
-    = stylesheet_link_tag "application"
+
     /[if lt IE 8]
       = stylesheet_link_tag "all-ie7"
     /[if lt IE 7]
